@@ -1,9 +1,10 @@
 # uclalib_serverspec_samvera
-A place to manage the growing collection of ServerSpec tests for UCLA Library's Samvera infrastructure
+A place to manage the growing collection of ServerSpec tests for UCLA Library's Samvera infrastructure.
 
-Uses [https://serverspec.org/](ServerSpec) to test our [https://samvera.org/](Samvera) infrastructure. These tests
-started out small, as a way to confirm the provisioning results of [https://github.com/hardyoyo/vagrant_embark](Vagrant_Embark)
-are what we intended. Those [https://github.com/hardyoyo/vagrant_embark/tree/master/serverspec](tests are still in Vagrant_Embark).
+Uses [ServerSpec](https://serverspec.org/) to test our [Samvera](https://samvera.org/) infrastructure. These tests
+started out small, as a way to confirm the provisioning results of [Vagrant_Embark](https://github.com/hardyoyo/vagrant_embark)
+are what we intended. Those [tests are still in Vagrant_Embark](https://github.com/hardyoyo/vagrant_embark/tree/master/serverspec).
+
 These tests are intended to expand upon that work, and be usuable to test our staging and production environments.
 
 ## ServerSpec Resources
