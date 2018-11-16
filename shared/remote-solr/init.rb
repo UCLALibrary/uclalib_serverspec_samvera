@@ -15,7 +15,6 @@ expected_solr_core = '"name":"'
 expected_solr_core << ENV['REMOTE-SOLR-CORE-NAME']
 expected_solr_core << '",'
 
-#TODO parameterize this
 # verify the Solr URL returns a result
 describe command("curl -o - #{solr_url}") do
   its(:exit_status) { should eq 0 }
