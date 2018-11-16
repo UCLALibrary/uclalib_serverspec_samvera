@@ -10,6 +10,8 @@ Dir[base_spec_dir.join('shared/**/*.rb')].sort.each{ |f| require f }
 set :backend, :ssh
 set :disable_sudo, true
 
+set :path, '/usr/sbin:$PATH'
+
 properties = YAML.load_file(base_spec_dir.join('properties.yml'))
 
 options = Net::SSH::Config.for(host)

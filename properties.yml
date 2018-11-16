@@ -1,0 +1,3 @@
+californica-test.library.ucla.edu:
+  :remote-solr-host: t-u-californicasolr01.library.ucla.edu
+  :remote-solr-core-name: calursus
