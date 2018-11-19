@@ -2,7 +2,7 @@ require 'rake'
 require 'rspec/core/rake_task'
 
 hosts = %w(
-  californica-test
+  californica-dev californica-test californica-stage californica-prod
 )
 
 task :spec => 'spec:all'

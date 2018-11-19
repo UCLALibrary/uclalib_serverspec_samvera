@@ -12,6 +12,35 @@ You'll need Ruby and the Serverspec gem installed: `gem install serverspec`.
 
 You'll also need to have your public SSH key installed for the deploy user on the environment you want to test.
 
+You'll also need to have the following configurations in your .ssh/config file:
+
+```
+Host *
+    ServerAliveInterval 300
+    ServerAliveCountMax 2
+
+Host jumpbox
+    HostName jump.library.ucla.edu
+    Port 31926
+    User your-username
+
+Host californica-dev
+    HostName californica-dev.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc californica-dev.library.ucla.edu 22
+
+Host californica-test
+    HostName californica-test.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc californica-test.library.ucla.edu 22
+
+Host californica-stage
+    HostName californica-stage.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc californica-stage.library.ucla.edu 22
+
+Host californica
+    HostName californica.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc californica.library.ucla.edu 22
+```
+
 ## Running a test
 You'll be using Rake to run the tests, run `rake -T` to see what tasks are defined. Here's an example task for californica-test:
 
