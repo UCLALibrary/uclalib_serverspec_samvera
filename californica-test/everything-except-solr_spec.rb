@@ -4,6 +4,7 @@ require_relative '../spec_helper'
 # be bothered to figure out how
 ENV['REMOTE-SOLR-HOST'] = 't-u-californicasolr01.library.ucla.edu'
 ENV['REMOTE-SOLR-CORE-NAME'] = 'calursus'
+ENV['REMOTE-IIIF-HOST'] = 't-u-cantaloupe01.library.ucla.edu'
 
 describe 'californica-test--everything-except-solr' do
     # include all the shared_examples
@@ -11,7 +12,9 @@ describe 'californica-test--everything-except-solr' do
     include_examples 'proxy::init'
     include_examples 'fedora::init'
     include_examples 'railsapp::init'
+    include_examples 'redis::init'
     include_examples 'remote-solr::init'
+    include_examples 'remote-iiif::init'
 
     # the host name should be set to host
     describe host(ENV['TARGET_HOST']) do

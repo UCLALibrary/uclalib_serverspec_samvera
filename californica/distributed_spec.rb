@@ -9,11 +9,15 @@ ENV['REMOTE-DB-HOST'] = 'p-d-mysqlmaster01.library.ucla.edu'
 ENV['REMOTE-DB-USER-NAME'] = 'califstageuser'
 ENV['REMOTE-FEDORA-HOST'] = 'p-u-californicafedora01.library.ucla.edu'
 
+ENV['REMOTE-IIIF-HOST'] = 'p-u-cantaloupe01.library.ucla.edu'
+
 describe 'californica-prod--distributed' do
     # include all the shared_examples
     include_examples 'remote-db::init'
     include_examples 'remote-fedora::init'
     include_examples 'remote-solr::init'
+    include_examples 'remote-iiif::init'
+    include_examples 'redis::init'
     include_examples 'proxy::init'
     include_examples 'railsapp::init'
 
