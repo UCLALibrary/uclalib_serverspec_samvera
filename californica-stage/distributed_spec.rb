@@ -9,13 +9,18 @@ ENV['REMOTE-DB-HOST'] = 'p-d-mysqlmaster01.library.ucla.edu'
 ENV['REMOTE-DB-USER-NAME'] = 'califstageuser'
 ENV['REMOTE-FEDORA-HOST'] = 's-u-californicafedora01.library.ucla.edu'
 
+ENV['REMOTE-IIIF-HOST'] = 's-u-cantaloupe01.library.ucla.edu'
+
 describe 'californica-stage--distributed' do
     # include all the shared_examples
     include_examples 'remote-db::init'
     include_examples 'remote-fedora::init'
     include_examples 'remote-solr::init'
+    include_examples 'remote-iiif::init'
+    include_examples 'redis::init'
     include_examples 'proxy::init'
     include_examples 'railsapp::init'
+
 
     # the host name should be set to host
     describe host(ENV['TARGET_HOST']) do
