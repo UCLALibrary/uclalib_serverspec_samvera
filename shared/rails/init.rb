@@ -1,7 +1,9 @@
 shared_examples 'railsapp::init' do
 
+  app_name = ENV['APP_NAME'] || 'californica'
+
   # verify paths (not exclusive, just a few very important folders)
-  %w{/opt/californica /opt/derivatives /opt/californica/releases /opt/californica/shared}.each do |paths|
+  ["/opt/#{app_name}", "/opt/derivatives", "/opt/#{app_name}/releases", "/opt/#{app_name}/shared"].each do |paths|
     describe file(paths) do
       it { should be_directory }
       it { should be_owned_by 'deploy' }
@@ -16,11 +18,8 @@ shared_examples 'railsapp::init' do
   packages = {
     'ruby' => {
       version: '2.5.1'
-    },
-    'ImageMagick' => {
-      version: '6.7.8.9'
     }
-  }
+ }
 
   # Verify packages
   packages.each do |name, details|

@@ -20,6 +20,7 @@ describe 'californica-prod--distributed' do
     include_examples 'redis::init'
     include_examples 'proxy::init'
     include_examples 'railsapp::init'
+    include_examples 'imagemagick::init'
 
     # the host name should be set to host
     describe host(ENV['TARGET_HOST']) do
