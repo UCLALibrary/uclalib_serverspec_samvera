@@ -39,6 +39,23 @@ Host californica-stage
 Host californica
     HostName californica.library.ucla.edu
     ProxyCommand ssh -A -q jumpbox nc californica.library.ucla.edu 22
+    
+Host ursus-test
+    HostName ursus-test.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc ursus-test.library.ucla.edu 22
+
+Host ursus-stage
+    HostName ursus-stage.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc ursus-stage.library.ucla.edu 22
+
+Host ursus-dev
+    HostName ursus-dev.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc ursus-dev.library.ucla.edu 22
+
+Host ursus
+    HostName ursus.library.ucla.edu
+    ProxyCommand ssh -A -q jumpbox nc ursus.library.ucla.edu 22
+
 ```
 
 ## Running a test
