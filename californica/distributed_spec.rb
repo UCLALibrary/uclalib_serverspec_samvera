@@ -6,7 +6,7 @@ ENV['REMOTE-SOLR-HOST'] = 'p-u-californicasolr01.library.ucla.edu'
 ENV['REMOTE-SOLR-CORE-NAME'] = 'calursus'
 ENV['REMOTE-DB-HOST'] = 'p-d-mysqlmaster01.library.ucla.edu'
 
-ENV['REMOTE-DB-USER-NAME'] = 'califstageuser'
+ENV['REMOTE-DB-USER-NAME'] = 'califproduser'
 ENV['REMOTE-FEDORA-HOST'] = 'p-u-californicafedora01.library.ucla.edu'
 
 ENV['REMOTE-IIIF-HOST'] = 'p-u-cantaloupe01.library.ucla.edu'
