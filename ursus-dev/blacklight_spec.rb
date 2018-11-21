@@ -5,14 +5,15 @@ require_relative '../spec_helper'
 ENV['APP_NAME'] = 'ursus'
 ENV['REMOTE-SOLR-HOST'] = 'd-u-californicasolr01.library.ucla.edu'
 ENV['REMOTE-SOLR-CORE-NAME'] = 'calursus'
-ENV['REMOTE-IIIF-HOST'] = 't-u-cantaloupe01.library.ucla.edu'
+ENV['REMOTE-IIIF-HOST'] = 'd-u-cantaloupe01.library.ucla.edu'
 
 describe 'ursus-dev--blacklight' do
     # include all the shared_examples
-    include_examples 'proxy::init'
-    include_examples 'railsapp::init'
     include_examples 'remote-solr::init'
     include_examples 'remote-iiif::init'
+    include_examples 'proxy::init'
+    include_examples 'railsapp::init'
+
 
     # the host name should be set to host
     describe host(ENV['TARGET_HOST']) do
