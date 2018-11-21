@@ -2,9 +2,9 @@ require_relative '../spec_helper'
 
 #TODO: use properties instead of these environment variables, whenever I can
 # be bothered to figure out how
+ENV['APP_NAME'] = 'ursus'
 ENV['REMOTE-SOLR-HOST'] = 's-u-californicasolr01.library.ucla.edu'
 ENV['REMOTE-SOLR-CORE-NAME'] = 'calursus'
-
 ENV['REMOTE-IIIF-HOST'] = 's-u-cantaloupe01.library.ucla.edu'
 
 describe 'ursus-stage--blacklight' do
