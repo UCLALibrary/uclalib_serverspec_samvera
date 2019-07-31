@@ -11,7 +11,7 @@ mysql_user_name = ENV['REMOTE-DB-USER-NAME']
 # define required packages
 packages = {
   'mysql-community-client' => {
-    version: '5.6.41'
+    version: '5.6.44'
   }
 }
 
